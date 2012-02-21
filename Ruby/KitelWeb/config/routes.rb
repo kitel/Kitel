@@ -1,17 +1,20 @@
 KitelWeb::Application.routes.draw do
-  get "area_code/index"
 
-  get "phone_number/index"
+  #area_codes API
+  get "area_codes" => 'PhoneNumber#show_area_codes'
+  put "area_codes" => 'PhoneNumber#not_supported'
+  post "area_codes" => 'PhoneNumber#not_supported'
+  delete "area_codes" => 'PhoneNumber#not_supported'
 
-  get "service/index"
+  #phone_numbers API
+  get "configuration/numbers_list" => 'PhoneNumber#index'
 
-  get "service/show"
-
+  #service API
+  #get "service/index"
+  #get "service/show"
   get "service/create"
-
-  get "service/update"
-
-  get "service/destroy"
+  #get "service/update"
+  #get "service/destroy"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
