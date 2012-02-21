@@ -1,0 +1,6 @@
+[submodule "Kitel"]
+	path = Kitel
+	url = git@github.com:kitel/Kitel.git
+[submodule "Ruby/KitelWeb/Kitel"]
+	path = Ruby/KitelWeb/Kitel
+	url = git@github.com:kitel/Kitel.git
