@@ -1,10 +1,13 @@
 class PhoneNumberController < ApplicationController
   def index
-    if params[:area_code] == nil
-      @phone_numbers = PhoneNumber.find(:all, :limit => params[:count])
-    else
-      @phone_numbers = PhoneNumber.find_all_by_area_code(params[:area_code], :limit => params[:count])
+    @conditions = "id not in (select phonenumber_id from services)"
+    if params[:area_code] != nil
+      @conditions += " and area_code='#{params[:area_code]}'"
     end
+
+    @phone_numbers = PhoneNumber.all(:select => "id, number, area_code",
+                                     :conditions => @conditions,
+                                     :limit => params[:count])
 
     respond_to do |format|
       format.xml # show_area_codes.xml.builder
@@ -22,3 +25,4 @@ class PhoneNumberController < ApplicationController
     render :status => 405
   end
 end
+

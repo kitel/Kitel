@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20120221033435) do
   end
 
   create_table "services", :force => true do |t|
-    t.integer  "phonenumber_id"
+    t.integer  "phonenumber_id",    :null => false
     t.integer  "partner_id"
     t.string   "user_phone_number"
     t.date     "start_date"
@@ -47,5 +47,7 @@ ActiveRecord::Schema.define(:version => 20120221033435) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "services", ["phonenumber_id"], :name => "index_services_on_phonenumber_id", :unique => true
 
 end

@@ -15,11 +15,18 @@ class ServiceController < ApplicationController
       return
     end
 
-    @service = Service.create( :phonenumber_id => @phone_number.id,
-                               :start_date => Date.today,
-                               :user_phone_number => params[:user_number],
-                               :service_period => params[:service_period])
-    @service.save()
+    begin
+      @service = Service.create( :phonenumber_id => @phone_number.id,
+                                 :start_date => Date.today,
+                                 :user_phone_number => params[:user_number],
+                                 :service_period => params[:service_period])
+      @service.save()
+    rescue Exception
+      @status = 400
+      @error_description = $! #ToDo: this is for debug purposes only, might be unsafe on PRO
+      render :status => @status
+      return
+    end
 
     @status = 201
     render :status => @status
