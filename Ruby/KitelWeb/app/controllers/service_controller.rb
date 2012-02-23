@@ -7,12 +7,14 @@ class ServiceController < ApplicationController
 
   def create
     begin
-     @phone_number = PhoneNumber.find_by_number!(params[:account_number])
+     # first we need to parse the phone number; US number in E.164 with or without + assumed for now
+     if !params[:account_number].gsub(/\D/, "").match(/^\+?1(\d{3})(\d+)/)
+      return renderError(400, "Wrong phone number format")
+     end
+
+     @phone_number = PhoneNumber.find_by_area_code_and_number!($1, $2)
     rescue ActiveRecord::RecordNotFound
-      @status = 400
-      @error_description = "#{@status} - Phone number not found"
-      render :status => @status
-      return
+      return renderError(400, "Phone number not found")
     end
 
     begin
@@ -22,10 +24,7 @@ class ServiceController < ApplicationController
                                  :service_period => params[:service_period])
       @service.save()
     rescue Exception
-      @status = 400
-      @error_description = $! #ToDo: this is for debug purposes only, might be unsafe on PRO
-      render :status => @status
-      return
+      return renderError(400, $!) #ToDo: $! is for debug purposes only, might be unsafe on PRO
     end
 
     @status = 201
@@ -38,4 +37,9 @@ class ServiceController < ApplicationController
   def destroy
   end
 
+  def renderError(status, error_description)
+    @status = status
+    @error_description = "#{status} - " + error_description.to_s
+    render :status => @status
+  end
 end
