@@ -6,7 +6,7 @@ xml.instruct!
   else
     xml.service do
       xml.service_id @service.id
-      xml.account_number @service.PhoneNumber.number
+      xml.account_number @service.PhoneNumber.to_e164
       xml.user_number @service.user_phone_number
       xml.start_time @service.start_date
       xml.service_period @service.service_period
