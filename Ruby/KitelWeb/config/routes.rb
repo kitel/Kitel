@@ -14,6 +14,7 @@ KitelWeb::Application.routes.draw do
   #get "service/show"
   get "service/create"
   post "service/create"
+  get "service/call"
   #get "service/update"
   #get "service/destroy"
 
