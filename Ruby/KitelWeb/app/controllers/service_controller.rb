@@ -47,21 +47,25 @@ class ServiceController < ApplicationController
   end
 
   #twilio integration demo
-  def call
+  def redirect
     # first we need to parse the phone number; US number in E.164 with or without + assumed for now
-    if !params['To'].gsub(/\D/, "").match(/^\+?1(\d{3})(\d+)/)
+    if !params['Called'] ||  params['Called']==''
+      params['Called'] = '+14084209186'
+    end
+
+    if !params['Called'].gsub(/\D/, "").match(/^\+?1(\d{3})(\d+)/)
       return renderError(400, "Wrong phone number format")
     end
 
     @phone_number = PhoneNumber.find_by_area_code_and_number!($1, $2)
 
     begin
-      service = Service.find_all_by_phonenumber_id(@phone_number.id)
-      @phone_number = service[0].user_phone_number
+      @service = Service.find_by_phonenumber_id(@phone_number.id)
+      @user_phone_number = @service.user_phone_number
     rescue ActiveRecord::RecordNotFound
       return renderError(400, "Service not found")
     end
 
-    render :action => "call.xml.builder", :layout => false
+    render :action => "redirect.xml.builder", :layout => false
   end
 end
