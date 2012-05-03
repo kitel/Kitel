@@ -37,7 +37,9 @@ class ServiceController < ApplicationController
   def update
   end
 
-  def destroy
+def destroy
+    Service.delete( params[:id] )
+    render :status => 200
   end
 
   def renderError(status, error_description)
