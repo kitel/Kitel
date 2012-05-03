@@ -48,7 +48,6 @@ class ServiceController < ApplicationController
 
   #twilio integration demo
   def redirect
-    # first we need to parse the phone number; US number in E.164 with or without + assumed for now
     if !params['From'] ||  params['From']==''
       params['From'] = '+14084209186'
     end
