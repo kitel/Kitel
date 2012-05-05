@@ -2,9 +2,7 @@ class Service < ActiveRecord::Base
   has_one :Partner
   belongs_to :PhoneNumber, :foreign_key => "phonenumber_id"
 
-  def as_json(options={})
-    options[:except] ||= :created_at || :updated_at || :partner_id || :phonenumber_id
-
+  def as_json(options=nil)
     result = { :service_id => id,
                :account_number => self.PhoneNumber.to_e164,
                :user_number => user_phone_number,
