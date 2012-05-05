@@ -2,6 +2,8 @@ class ServiceController < ApplicationController
   require 'rubygems'
   require 'twilio-ruby'
 
+  respond_to :json
+
   def index
   end
 
@@ -30,22 +32,18 @@ class ServiceController < ApplicationController
       return renderError(400, $!) #ToDo: $! is for debug purposes only, might be unsafe on PRO
     end
 
-    @status = 201
-    render :status => @status
+    @status = 200
+
+    # render :status => @status
+    respond_with @service
   end
 
   def update
   end
 
-def destroy
+  def destroy
     Service.delete( params[:id] )
     render :status => 200
-  end
-
-  def renderError(status, error_description)
-    @status = status
-    @error_description = "#{status} - " + error_description.to_s
-    render :status => @status
   end
 
   #twilio integration demo
@@ -74,5 +72,11 @@ def destroy
     end
 
     render :action => "redirect.xml.builder", :layout => false
+  end
+
+  def renderError(status, error_description)
+      @status = status
+      @error_description = "#{status} - " + error_description.to_s
+      render :status => @status
   end
 end

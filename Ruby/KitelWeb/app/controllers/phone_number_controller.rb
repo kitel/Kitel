@@ -1,4 +1,5 @@
 class PhoneNumberController < ApplicationController
+
   def index
     @conditions = "id not in (select phonenumber_id from services)"
     if params[:area_code] != nil
@@ -10,7 +11,8 @@ class PhoneNumberController < ApplicationController
                                      :limit => params[:count])
 
     respond_to do |format|
-      format.xml # show_area_codes.xml.builder
+      format.xml # index.xml.builder
+      format.json # index.json.erb
     end
   end
 
@@ -18,6 +20,7 @@ class PhoneNumberController < ApplicationController
     @area_codes = PhoneNumber.all(:select => 'distinct(area_code)')
     respond_to do |format|
       format.xml # show_area_codes.xml.builder
+      format.json # show_area_codes.json.erb
     end
   end
 

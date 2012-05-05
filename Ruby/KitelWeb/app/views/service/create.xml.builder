@@ -1,5 +1,5 @@
 xml.instruct!
-  if @status != 201
+  if @status != 200
     xml.error do
         xml.description @error_description
     end
