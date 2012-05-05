@@ -2,8 +2,6 @@ class ServiceController < ApplicationController
   require 'rubygems'
   require 'twilio-ruby'
 
-  respond_to :json
-
   def index
   end
 
@@ -34,8 +32,7 @@ class ServiceController < ApplicationController
 
     @status = 200
 
-    # render :status => @status
-    respond_with @service
+    render :status => @status
   end
 
   def update
