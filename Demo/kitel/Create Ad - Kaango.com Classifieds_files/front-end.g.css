@@ -1,0 +1,2020 @@
+/*! --------------------------------------------------------------
+    Copyright (c) 2011 - Kaango, LLC - All Rights Reserved
+   -------------------------------------------------------------- */
+
+/* --------------------------------------------------------------
+
+Resets the brower - please modify only if necessary
+
+Borrowed From: https://github.com/joshuaclayton/blueprint-css/raw/master/blueprint/src/reset.css
+
+Which is Based on: http://meyerweb.com/eric/tools/css/reset/reset.css
+
+-------------------------------------------------------------- */
+html{margin:0; padding:0; border:0}
+
+body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+hgroup, nav, section{ margin:0;  padding:0;  border:0;  font-size:100%;  font:inherit;  vertical-align:baseline}
+
+article, aside, details, figcaption, figure, dialog,
+footer, header, hgroup, menu, nav, section{ display:block}
+
+body{ line-height:1.5;  background:white}
+
+table{border-collapse:separate; border-spacing:0}
+
+caption, th, td{text-align:left; font-weight:normal; float:none !important}
+table, th, td{vertical-align:middle}
+
+blockquote:before, blockquote:after, q:before, q:after{content:''}
+blockquote, q{quotes:""""}
+
+a img{border:none}
+
+:focus{outline:0}
+
+/* --------------------------------------------------------------
+
+Setups base typography settings - please modify only if necessary
+
+Borrowed From: https://github.com/joshuaclayton/blueprint-css/raw/master/blueprint/src/typography.css
+
+-------------------------------------------------------------- */
+/* Default font settings.
+   The font-size percentage is of 16px. (0.75 * 16px = 12px) */
+html{font-size:100.01%}
+body{ font-size:75%;  color:#222;  background:#fff;  font-family:"Helvetica Neue",Arial,Helvetica,sans-serif}
+
+/* Headings
+-------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6{font-weight:normal; color:#111}
+
+h1{font-size:3em; line-height:1; margin-bottom:0.5em}
+h2{font-size:2em; margin-bottom:0.75em}
+h3{font-size:1.5em; line-height:1; margin-bottom:1em}
+h4{font-size:1.2em; line-height:1.25; margin-bottom:1.25em}
+h5{font-size:1em; font-weight:bold; margin-bottom:1.5em}
+h6{font-size:1em; font-weight:bold}
+
+h1 img, h2 img, h3 img,
+h4 img, h5 img, h6 img{ margin:0}
+
+/* Text elements
+-------------------------------------------------------------- */
+p{
+	margin:0 0 0
+}
+/*
+These can be used to pull an image at the start of a paragraph, so
+that the text flows around it (usage:<p><img class="left">Text</p>)
+ */
+.left{float:left !important}
+p .left{margin:1.5em 1.5em 1.5em 0; padding:0}
+.right{float:right !important}
+p .right{margin:1.5em 0 1.5em 1.5em; padding:0}
+
+a:focus,
+a:hover{color:#09f}
+a{color:#06c; text-decoration:underline}
+
+blockquote{margin:1.5em; color:#666; font-style:italic}
+strong, dfn{font-weight:bold}
+em, dfn{font-style:italic}
+sup, sub{line-height:0}
+
+abbr,
+acronym{border-bottom:1px dotted #666}
+address{margin:0 0 1.5em; font-style:italic}
+del{color:#666}
+
+pre{margin:1.5em 0; white-space:pre}
+pre, code, tt{font:1em 'andale mono','lucida console',monospace; line-height:1.5}
+
+/* Lists
+-------------------------------------------------------------- */
+li ul,
+li ol{margin:0}
+ul, ol{margin:0 1.5em 1.5em 0; padding-left:1.5em}
+
+ul{list-style-type:disc}
+ol{list-style-type:decimal}
+
+dl{margin:0 0 1.5em 0}
+dl dt{font-weight:bold}
+dd{margin-left:1.5em}
+
+/* Tables
+-------------------------------------------------------------- */
+/*
+Because of the need for padding on TH and TD, the vertical rhythm
+on table cells has to be 27px, instead of the standard 18px or 36px
+of other elements.
+ */
+table{margin-bottom:1.4em; width:100%}
+th{font-weight:bold}
+thead th{background:#c3d9ff}
+th, td, caption{padding:4px 10px 4px 5px}
+/*
+You can zebra-stripe your tables in outdated browsers by adding
+the class "even"to every other table row.
+tbody tr:nth-child(even) td,
+tbody tr.even td{background:#e5ecf9}
+ */
+tfoot{font-style:italic}
+caption{background:#eee}
+
+
+/* --------------------------------------------------------------
+   Stylesheet setup for: jCarousel - Riding carousels with jQuery
+
+   http://sorgalla.com/projects/jcarousel/
+   -------------------------------------------------------------- */
+
+/**
+ * This <div>element is wrapped by jCarousel around the list
+ * and has the classname "jcarousel-container".
+ */
+.jcarousel-container{ position:relative;  left:0}
+
+.jcarousel-clip{ z-index:2;  padding:0;  margin:0;  overflow:hidden;  position:relative}
+
+.jcarousel-list{ z-index:1;  overflow:hidden;  position:relative;  top:0;  left:0;  margin:0;  padding:0;  text-align:center}
+
+.jcarousel-list li,
+.jcarousel-item{ float:left;  list-style:none;  text-align:center}
+
+ /**
+ * The buttons are added dynamically by jCarousel before
+ * the <ul>list (inside the <div>described above) and
+ * have the classnames "jcarousel-next"and "jcarousel-prev".
+ */
+.jcarousel-next{ z-index:3;  display:none}
+
+.jcarousel-prev{ z-index:3;  display:none}
+
+/*** JCarousel Styles ***/
+/* JCarousel Containers */
+.jcarousel-skin-tango .jcarousel-container{BORDER-RIGHT:#ccc 1px solid; BORDER-TOP:#ccc 1px solid; MARGIN-BOTTOM:10px; BORDER-LEFT:#ccc 1px solid; BORDER-BOTTOM:#ccc 1px solid}
+
+.jcarousel-skin-tango .jcarousel-container-horizontal{PADDING-RIGHT:0px; PADDING-LEFT:0px; PADDING-BOTTOM:0px; PADDING-TOP:0px; overflow:hidden; background:#fff}
+
+.jcarousel-skin-tango .jcarousel-container-vertical{PADDING-RIGHT:20px; PADDING-LEFT:20px; PADDING-BOTTOM:40px; WIDTH:75px; PADDING-TOP:40px; HEIGHT:245px}
+
+.jcarousel-skin-tango .jcarousel-clip-horizontal{WIDTH:695px; HEIGHT:143px; margin: 0 auto; }
+
+.jcarousel-skin-tango .jcarousel-clip-vertical{WIDTH:75px; HEIGHT:245px}
+
+.jcarousel-list, #mycarousel{margin:0; padding:0}
+
+/* JCarousel Items */
+.jcarousel-skin-tango .jcarousel-item-horizontal{margin:0px 5px 0px 0px; padding:10px 5px 10px 5px; background:#fff; WIDTH:95px; HEIGHT:120px; text-align:center}
+
+.jcarousel-skin-tango .jcarousel-item-vertical{MARGIN-BOTTOM:10px}
+
+.jcarousel-skin-tango .jcarousel-item-placeholder{BACKGROUND:#fff; COLOR:#000}
+
+.jcarousel-skin-tango .jcarousel-next-horizontal{RIGHT:5px; BACKGROUND:url(/2.8.49_9.1.1600_1349/resources/img/tango/next-horizontal.png) no-repeat 0px 0px; WIDTH:32px; CURSOR:pointer; POSITION:absolute; TOP:53px; HEIGHT:32px}
+
+/* JCarousel Browse Links */
+.jcarousel-skin-tango .jcarousel-next-horizontal:hover{BACKGROUND-POSITION:-32px 0px}
+
+.jcarousel-skin-tango .jcarousel-next-horizontal:active{BACKGROUND-POSITION:-64px 0px}
+
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal{BACKGROUND-POSITION:-128px 0px; CURSOR:default}
+
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:hover{BACKGROUND-POSITION:-128px 0px; CURSOR:default}
+
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:active{BACKGROUND-POSITION:-128px 0px; CURSOR:default}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal{BACKGROUND:url(/2.8.49_9.1.1600_1349/resources/img/tango/prev-horizontal.png) no-repeat 0px 0px; LEFT:5px; WIDTH:32px; CURSOR:pointer; POSITION:absolute; TOP:53px; HEIGHT:32px}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal:hover{BACKGROUND-POSITION:-32px 0px}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal:active{BACKGROUND-POSITION:-64px 0px}
+
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal{BACKGROUND-POSITION:-128px 0px; CURSOR:default}
+
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:hover{BACKGROUND-POSITION:-128px 0px; CURSOR:default}
+
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:active{BACKGROUND-POSITION:-128px 0px; CURSOR:default}
+
+.jcarousel-skin-tango .jcarousel-next-vertical{BACKGROUND:url(/2.8.49_9.1.1600_1349/resources/img/tango/next-vertical.png) no-repeat 0px 0px; LEFT:43px; WIDTH:32px; CURSOR:pointer; BOTTOM:5px; POSITION:absolute; HEIGHT:32px}
+
+.jcarousel-skin-tango .jcarousel-next-vertical:hover{BACKGROUND-POSITION:0px -32px}
+
+.jcarousel-skin-tango .jcarousel-next-vertical:active{BACKGROUND-POSITION:0px -64px}
+
+.jcarousel-skin-tango .jcarousel-next-disabled-vertical{BACKGROUND-POSITION:0px -96px; CURSOR:default}
+
+.jcarousel-skin-tango .jcarousel-next-disabled-vertical:hover{BACKGROUND-POSITION:0px -96px; CURSOR:default}
+
+.jcarousel-skin-tango .jcarousel-next-disabled-vertical:active{BACKGROUND-POSITION:0px -96px; CURSOR:default}
+
+.jcarousel-skin-tango .jcarousel-prev-vertical{BACKGROUND:url(/2.8.49_9.1.1600_1349/resources/img/tango/prev-vertical.png) no-repeat 0px 0px; LEFT:43px; WIDTH:32px; CURSOR:pointer; POSITION:absolute; TOP:5px; HEIGHT:32px}
+
+.jcarousel-skin-tango .jcarousel-prev-vertical:hover{BACKGROUND-POSITION:0px -32px}
+
+.jcarousel-skin-tango .jcarousel-prev-vertical:active{BACKGROUND-POSITION:0px -64px}
+
+.jcarousel-skin-tango .jcarousel-prev-disabled-vertical{BACKGROUND-POSITION:0px -96px; CURSOR:default}
+
+.jcarousel-skin-tango .jcarousel-prev-disabled-vertical:hover{BACKGROUND-POSITION:0px -96px; CURSOR:default}
+
+.jcarousel-skin-tango .jcarousel-prev-disabled-vertical:active{BACKGROUND-POSITION:0px -96px; CURSOR:default}
+
+
+/* --------------------------------------------------------------
+   Stylesheet setup for the lightbox : Colorbox
+
+   http://colorpowered.com/colorbox/
+   -------------------------------------------------------------- */
+
+/*
+    ColorBox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+
+/*
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+
+/* borrowed from jquery ui to give us the same background color as other modals */
+#cboxOverlay{background: url("images/ui-bg_flat_0_aaaaaa_40x100.png") repeat-x scroll 50% 50% #AAAAAA}
+
+#colorbox{}
+#cboxTopLeft{width:25px; height:25px; background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/border1.png) no-repeat 0 0;}
+#cboxTopCenter{height:25px; background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/border1.png) repeat-x 0 -50px;}
+#cboxTopRight{width:25px; height:25px; background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/border1.png) no-repeat -25px 0;}
+#cboxBottomLeft{width:25px; height:25px; background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/border1.png) no-repeat 0 -25px;}
+#cboxBottomCenter{height:25px; background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/border1.png) repeat-x 0 -75px;}
+#cboxBottomRight{width:25px; height:25px; background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/border1.png) no-repeat -25px -25px;}
+#cboxMiddleLeft{width:25px; background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/border2.png) repeat-y 0 0;}
+#cboxMiddleRight{width:25px; background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/border2.png) repeat-y -25px 0;}
+#cboxContent{background:#fff; overflow:hidden;}
+#cboxError{padding:50px; border:1px solid #ccc;}
+#cboxLoadedContent{margin-bottom:20px;}
+#cboxTitle{position:absolute; bottom:0px; left:0; text-align:center; width:100%; color:#999;}
+#cboxCurrent{position:absolute; bottom:0px; left:100px; color:#999;}
+#cboxSlideshow{position:absolute; bottom:0px; right:42px; color:#444;}
+#cboxPrevious{position:absolute; bottom:0px; left:0; color:#444;}
+#cboxNext{position:absolute; bottom:0px; left:63px; color:#444;}
+#cboxLoadingOverlay{background:#fff url(/2.8.49_9.1.1600_1349/resources/img/colorbox/loading.gif) no-repeat 5px 5px;}
+
+/* borrowed from jquery ui to give us the same close button as other modals */
+#cboxClose{position:absolute; top:5px; right:5px; display:block; background-image: url("/2.8.49_9.1.1600_1349/resources/css/ui/images/ui-icons_222222_256x240.png"); background-position: -96px -128px; width:16px; height:16px; text-indent:-9999px;}
+
+/*
+  The following fixes a problem where IE7+ replaces a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.
+*/
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+/*
+  The following provides PNG transparency support for IE6
+*/
+.cboxIE6 #cboxTopLeft{background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/ie6/borderTopLeft.png);}
+.cboxIE6 #cboxTopCenter{background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/ie6/borderTopCenter.png);}
+.cboxIE6 #cboxTopRight{background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/ie6/borderTopRight.png);}
+.cboxIE6 #cboxBottomLeft{background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/ie6/borderBottomLeft.png);}
+.cboxIE6 #cboxBottomCenter{background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/ie6/borderBottomCenter.png);}
+.cboxIE6 #cboxBottomRight{background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/ie6/borderBottomRight.png);}
+.cboxIE6 #cboxMiddleLeft{background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/ie6/borderMiddleLeft.png);}
+.cboxIE6 #cboxMiddleRight{background:url(/2.8.49_9.1.1600_1349/resources/img/colorbox/ie6/borderMiddleRight.png);}
+
+.cboxIE6 #cboxTopLeft,
+.cboxIE6 #cboxTopCenter,
+.cboxIE6 #cboxTopRight,
+.cboxIE6 #cboxBottomLeft,
+.cboxIE6 #cboxBottomCenter,
+.cboxIE6 #cboxBottomRight,
+.cboxIE6 #cboxMiddleLeft,
+.cboxIE6 #cboxMiddleRight {
+    _behavior: expression(this.src = this.src ? this.src : this.currentStyle.backgroundImage.split('"')[1], this.style.background = "none", this.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + this.src + ", sizingMethod='scale')");
+}
+
+/* --------------------------------------------------------------
+   setup for the overlib javascript library
+   -------------------------------------------------------------- */
+#overDiv
+{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #000000;
+    padding: 5px;
+    width: 250px;
+}
+
+#overDiv table
+{
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+
+/* --------------------------------------------------------------
+    Base stylesheet rules for the kaango classified site
+   -------------------------------------------------------------- */
+
+/* float clearing for IE6 */
+* html .clearfix
+{
+  height: 1%;
+  overflow: visible;
+}
+
+/* float clearing for IE7 */
+*+html .clearfix
+{
+  min-height: 1%;
+}
+
+/* float clearing for everyone else */
+.clearfix:after
+{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+}
+
+/* --------------------------------------------------------------
+    The css rules that define the base layout of the classifieds site
+   -------------------------------------------------------------- */
+body
+{
+    margin: 10px;
+}
+
+#kng-site-wrapper
+{
+    width: 1040px;
+    margin: 0;
+}
+
+#kng-main-body
+{
+    background-color: #FFF;
+}
+
+#kng-full-content
+{
+    padding-left: 5px;
+    margin-top: 15px;
+}
+
+#kng-navigation-account-bar
+{
+    margin-top: 2px;
+}
+
+    /* --------------------------------------------------------------
+        css rules for the navigation-bar
+       -------------------------------------------------------------- */
+    #kng-navigation-account-bar div#kng-navigation
+    {
+        width: 60%;
+        float: left;
+    }
+
+    #kng-navigation-account-bar div#kng-account-login
+    {
+        width: 35%;
+        float: right;
+    }
+
+    #kng-navigation-account-bar div#kng-navigation
+    {
+        margin-left: 1em;
+    }
+
+    #kng-navigation-account-bar div#kng-account-login
+    {
+        text-align: right;
+    }
+
+    #kng-navigation-account-bar div#kng-navigation ul,
+    #kng-navigation-account-bar div#kng-account-login ul
+    {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #kng-navigation-account-bar div#kng-account-login ul li
+    {
+        display: inline;
+        padding-right: 0.25em;
+        border-right: 1px solid #222222;
+    }
+
+    #kng-navigation-account-bar div#kng-account-login ul li.kng-account-login-last
+    {
+        padding: 0;
+        border: 0 none;
+    }
+
+    #kng-navigation-account-bar div#kng-navigation ul li
+    {
+        display: inline;
+        border: solid;
+        border-width: 1px 1px 0 1px;
+        border-color: #CCC;
+        padding: 0.5em 0.5em 0.3em 0.5em;
+        margin-right: 0.25em;
+    }
+
+    #kng-navigation-account-bar div#kng-navigation ul li.kng-navigation-active
+    {
+        background: #EEE;
+        border-bottom: 2px solid #EEE;
+    }
+
+    #kng-navigation-account-bar div#kng-navigation ul li a
+    {
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.25em 1em;
+        font-size: 1.3em;
+        border-bottom: none;
+        margin-right: 1px;
+    }
+
+#kng-content-area
+{
+    width: 1040px;
+    clear: both;
+}
+
+#kng-main-content
+{
+    display: table;
+    table-layout: fixed;
+}
+
+    .kng-width-with-right-adv
+    {
+        width: 1040px;
+    }
+
+    .kng-width-wo-right-adv
+    {
+        width: 840px;
+    }
+
+#kng-main-content-inner
+{
+    display: table-row;
+}
+
+#kng-site-content,
+#kng-right-advertisement
+{
+    display: table-cell;
+    vertical-align: top;
+}
+
+
+#kng-site-content
+{
+    border: 1px solid #CCC;
+    height: 100%;
+    overflow: hidden;
+}
+
+#kng-breadcrumb-bar
+{
+    background-color: #EEE;
+    border-bottom: 1px solid #CCC;
+    padding: 0.5em 0 0.5em 0;
+}
+
+    .kng-breadcrumbs-width-full
+    {
+        width: 100%;
+    }
+
+    .kng-breadcrumbs-width-sixty
+    {
+        width: 59%;
+        float: left;
+    }
+
+    #kng-breadcrumbs-right-side
+    {
+        display: inline-block;
+        width: 40%;
+        text-align: right;
+    }
+
+    #kng-breadcrumbs ul
+    {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding-left: 0.75em;
+    }
+
+    #kng-breadcrumbs ul li
+    {
+        display: inline;
+        /* float:left; */
+        line-height:2.3em;
+        color:#777;
+    }
+
+    #kng-breadcrumbs ul li.last
+    {
+        font-weight: bold;
+    }
+
+    #kng-breadcrumbs ul li a
+    {
+        color: #292929;
+        background: url(/2.8.49_9.1.1600_1349/resources/img/breadcrumb-sep.gif) no-repeat scroll right transparent;
+        padding-right: 10px;
+        margin-right: 3px;
+    }
+
+    #kng-breadcrumbs ul li a:hover
+    {
+        color: #403f3f;
+    }
+
+#kng-content-wrapper
+{
+    display: table;
+    table-layout: fixed;
+    clear: both;
+    height: 100%;
+}
+
+#kng-inner-content-wrapper
+{
+    display: table-row;
+}
+
+#kng-left-side
+{
+    display: table-cell;
+    padding: 10px;
+    border-right: 1px solid #CCC;
+}
+    #kng-left-advertisement
+    {
+        padding-top: 0.75em;
+        text-align: center;
+    }
+
+.kng-left-side-normal-width,
+.kng-right-side-normal-width
+{
+    width: 200px;
+}
+
+#kng-right-side
+{
+    display: table-cell;
+    padding: 10px;
+    border-left: 1px solid #CCC;
+}
+
+#kng-right-advertisement
+{
+    overflow: hidden;
+    width: 200px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: table-cell;
+}
+
+#kng-primary-content
+{
+    display: table-cell;
+    padding: 10px;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+    .kng-primary-content-normal
+    {
+        width: 600px;
+    }
+    .kng-primary-content-wide
+    {
+        width: 820px;
+    }
+
+#kng-primary-content-inner
+{
+}
+
+#kng-footer-bar
+{
+    padding-top: 1em;
+    clear: both;
+    margin: 0 auto;
+}
+
+#kng-powered-by-bar
+{
+    clear: both;
+    text-align: center;
+    padding-top: 1em;
+    border-top: 1px dotted #CCC;
+}
+
+/* --------------------------------------------------------------
+    helper css rules
+   -------------------------------------------------------------- */
+.kng-small-font
+{
+    font-size: .85em;
+    margin-bottom: 1.9em;
+    line-height: 1.9em
+}
+
+.hidden, .kng-hide-row, .kng-hide
+{
+    display: none;
+}
+
+h1
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    color: #212121;
+}
+
+.kng-light-gray-box
+{
+    background-color: #F6F6F6;
+}
+
+.kng-primary-link-size
+{
+    font-size: 0.95em !important;
+}
+
+a.kng-tertiary-link-color:hover
+{
+    color: #626670;
+}
+
+a.kng-active-tab-link-color
+{
+    color: #000;
+}
+
+a.kng-active-tab-link-color:hover
+{
+    color: #999;
+}
+
+a.kng-inactive-tab-link-color
+{
+    color: #7a7c7d;
+}
+
+a.kng-inactive-tab-link-color:hover
+{
+    color: #a9a9a9;
+}
+
+.kng-text-light-green
+{
+    color: #090;
+}
+
+.kng-text-mustard-green
+{
+    color: #990;
+}
+
+.kng-text-alert,
+a.kng-alert-color,
+a.kng-alert-color:hover
+{
+    color: #860909;
+}
+
+.kng-alert-box
+{
+    background-color: #860909 !important;
+    color: #FFF;
+}
+
+.kng-medium-gray-color
+{
+    color: #5E5E5E;
+}
+
+.kng-margin-bottom-align-center
+{
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+a.kng-no-text-decoration
+{
+    text-decoration: none;
+}
+
+.kng-align-center
+{
+    text-align: center;
+}
+
+.kng-align-right
+{
+    text-align: right;
+}
+
+.kng-float-right
+{
+    float: right;
+}
+
+.kng-float-left
+{
+    float: left;
+}
+
+.kng-normal-text
+{
+    font-weight:normal !important;
+}
+
+.kng-bold-text
+{
+    font-weight: bold;
+}
+
+.kng-xl-font-size
+{
+    font-size: 1.75em;
+}
+
+.kng-large-font-size
+{
+    font-size: 1.35em;
+}
+
+.kng-margin-base-top-bottom
+{
+    margin: 0.5em 0 0.5em 0;
+}
+
+.kng-padding-base-top-bottom
+{
+    padding: 0.5em 0 0.5em 0;
+}
+
+.kng-padding-base-bottom-only
+{
+    padding: 0 0 0.5em 0;
+}
+
+.kng-padding-base
+{
+    padding: 0.5em;
+}
+
+.kng-no-margin
+{
+    margin: 0 !important;
+}
+
+.kng-no-padding
+{
+    padding: 0 !important;
+}
+
+.kng-indent-left
+{
+    padding-left: 0.75em !important;
+}
+
+.kng-no-list-style
+{
+    list-style: none;
+}
+
+.kng-block
+{
+    display: block;
+}
+
+.kng-inline-block
+{
+    display: inline-block;
+}
+
+.kng-inline
+{
+    display: inline;
+}
+
+.kng-clear-both
+{
+    clear: both;
+}
+
+
+.kng-vertical-align-top
+{
+    vertical-align: top;
+}
+
+h3
+{
+    font-size: 1.1em !important;
+    font-weight: bold;
+    margin: 0   ;
+}
+
+.kng-add-top-bottom-border-with-padding
+{
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.kng-add-bottom-border-with-padding
+{
+    border-bottom: 1px solid #EEE;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.kng-signin-link
+{
+    font-weight: bold;
+    margin: 0.25em 0 0.25em 0;
+}
+
+.kng-signin-link a
+{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+#kng-no-branding-wrapper,
+.kng-content-width-with-right-adv
+{
+    width: 840px;
+}
+
+
+#kng-search-bar
+{
+    background-color: #EEE;
+    border-bottom: 1px solid #CCC;
+}
+
+#kng-search-bar ul
+{
+    list-style: none;
+    text-align: center;
+    padding: 1em 0 1em 0;
+    margin: 0;
+}
+
+#kng-search-bar ul li
+{
+    display: inline;
+    margin-right: 10px;
+}
+
+#kng-search-bar ul li label
+{
+    font-size: 1.15em;
+    padding: 4px;
+}
+
+#kng-search-bar ul li input
+{
+    font-size: 1.15em;
+    padding: 4px;
+}
+
+.kng-left-side-box
+{
+    border: 1px solid #CCC;
+    background-color: #EEE;
+    padding: 5px;
+    vertical-align: top;
+    margin-bottom: 1em;
+    border-radius: 3px;
+}
+
+
+.kng-small-button
+{
+    display: block;
+    padding: 2px;
+    background-color: #f1f1ef;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    font-size: 0.9em;
+    border: 1px solid #bbb6b6;
+    border-radius: 2px;
+}
+
+.kng-large-yellow-button
+{
+    display: block;
+    padding: 10px;
+    background-color: #FFFFBB;
+    font-weight: bold;
+    width: 150px;
+    text-align: center;
+    font-size: 1.3em;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+.kng-large-yellow-button-xwide
+{
+    width: 250px;
+}
+
+.kng-left-side-box h2
+{
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 0 0 0.5em 0;
+    color: #2a2929;
+}
+
+.kng-left-side-box .kng-left-side-box-header .kng-left-side-box-header-left
+{
+    float: left;
+}
+
+.kng-left-side-box .kng-left-side-box-header .kng-left-side-box-header-right
+{
+    float: right;
+}
+
+.kng-left-side-box ul
+{
+    margin: 0.25em 0.5em 0.25em 0;
+    clear: both;
+}
+
+.kng-left-side-box ul li
+{
+    padding-bottom: 0.2em;
+}
+
+
+
+#kng-primary-content h2
+{
+    font-weight: bold;
+    font-size: 1.35em;
+    font-color: #999;
+}
+
+.kng-ad-blocks
+{
+    text-align: center;
+}
+
+.kng-ad-blocks ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.kng-ad-blocks ul li
+{
+    text-align: left;
+    display: inline-block;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.kng-ad-blocks ul li a
+{
+    display: block;
+    width: 115px;
+    height: 120px;
+    border: 1px solid #b8b7b7;
+    text-align: center;
+    padding: 5px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    background: #FCFCFC; /* old browsers */
+    background: -moz-linear-gradient(top, #FCFCFC 0%, #F4F4F4 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FCFCFC), color-stop(100%,#F4F4F4)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FCFCFC', endColorstr='#F4F4F4',GradientType=0 ); /* ie */
+    -moz-box-shadow: 0 0 5px #CCC;
+    -webkit-box-shadow: 0 0 5px #888;
+    box-shadow: 0 0 5px #888;
+}
+
+.kng-ad-blocks ul li div
+{
+    margin-top: 15px; /* rough estimate there is javascript to position it correctly */
+}
+
+.kng-box-left-50-with-border
+{
+    padding: 0.5em;
+    border: 1px solid #eeecec;
+    margin: 0.75em;
+    float: left;
+    width: 46%;
+}
+
+.kng-info-box
+{
+    background-color: #EEE;
+    padding: 10px;
+    border: 1px solid #b8b7b7;
+    margin-bottom: 0.75em;
+}
+
+.kng-info-box h3
+{
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.kng-info-box p
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+.kng-box-highlight
+{
+    background-color: #FFFFBB;
+}
+
+
+ul.kng-ul-list-two-deep,
+ul.kng-ul-list-two-deep ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.kng-ul-list-two-deep li div,
+ul.kng-ul-list-two-deep ul li div
+{
+    padding: 5px;
+}
+
+ul.kng-ul-list-two-deep h4
+{
+    display: inline-block;
+    font-size: 1.75em;
+    font-weight: bold;
+    width: 255px;
+    margin: 0;
+    padding: 0;
+}
+
+
+ul.kng-ul-list-two-deep ul li
+{
+    margin-left: 15px;
+}
+
+ul.kng-ul-list-two-deep ul h5
+{
+    display: inline-block;
+    font-size: 1.35em;
+    font-weight: bold;
+    width: 240px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.kng-base-ul-form ul,
+.kng-large-input-ul-form ul,
+.kng-base-ul-checkbox-only-form ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.kng-base-ul-form ul li:first-child,
+.kng-large-input-ul-form ul li:first-child,
+.kng-base-ul-checkbox-only-form ul li:first-child
+{
+    border-top: 1px dashed #CCC;
+    padding-top: 1.25em;
+}
+
+.kng-base-ul-form ul li,
+.kng-large-input-ul-form ul li,
+.kng-base-ul-checkbox-only-form ul li
+{
+    border-bottom: 1px dashed #CCC;
+    padding: 1.25em 0.6em 1.25em 0.6em;
+}
+
+.kng-base-ul-form ul li.form-set ul
+{
+    margin-bottom: 0.5em;
+}
+
+.kng-base-ul-form ul li.form-set ul li.subheader,
+.kng-base-ul-form ul li.form-set ul li.paragraph
+{
+    padding: 0;
+    margin: 0;
+    border: 0 none;
+}
+
+.kng-base-ul-form ul li.form-set ul li.subheader
+{
+    background-color: #EEE;
+}
+
+.kng-base-ul-form ul li.form-set ul li.subheader h4
+{
+    padding: 0.3em;
+    margin: 0;
+}
+
+.kng-base-ul-form ul li.form-set ul li.paragraph p
+{
+    padding: 0.2em 0.2em 0.2em 0.75em;
+    margin: 0;
+}
+
+.kng-base-ul-form ul li.invalid,
+.kng-large-input-ul-form ul li.invalid
+{
+    background-color: #ffffcc;
+}
+
+.kng-large-input-ul-form ul li.captcha ul.errors
+{
+    margin: 0;
+    text-align: center;
+}
+
+.kng-base-ul-form ul li ul.errors,
+.kng-large-input-ul-form ul li ul.errors
+{
+    margin: 0 0 0 190px;
+    font-weight: bold;
+    color: red;
+}
+
+.kng-base-ul-form ul li ul.errors li,
+.kng-large-input-ul-form ul li ul.errors li
+{
+    border: 0 none;
+    padding: 0;
+    margin: 0;
+}
+
+.kng-base-ul-form ul li.captcha,
+.kng-large-input-ul-form ul li.captcha
+{
+    text-align: center;
+}
+
+.kng-base-ul-form ul li.captcha img,
+.kng-large-input-ul-form ul li.captcha img
+{
+    border: 1px solid #999;
+}
+
+.kng-base-ul-form ul li.captcha img,
+.kng-base-ul-form ul li.captcha input,
+.kng-large-input-ul-form ul li.captcha img,
+.kng-large-input-ul-form ul li.captcha input
+{
+    margin: 0.5em auto;
+    display: block; 
+}
+
+.kng-base-ul-form ul li.submit,
+.kng-large-input-ul-form li.submit,
+.kng-base-ul-checkbox-only-form li.submit
+{
+    border-bottom: 0 none;
+    text-align: center;
+}
+
+.kng-base-ul-form ul li p.hint,
+.kng-large-input-ul-form ul li p.hint
+{
+    margin: 0 0 0 190px;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #2f4f4f;
+}
+
+.kng-base-ul-form ul li span.required,
+.kng-large-input-ul-form ul li span.required
+{
+    font-weight: bold;
+    color: #b22222;
+}
+
+.kng-base-ul-form ul li label
+{
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.kng-base-ul-form ul li label,
+.kng-large-input-ul-form ul li label
+{
+    margin-right: 10px;
+    width: 170px;
+    display: inline-block;
+}
+
+#field-us, #field-canada, #field-australia, #field-world
+{
+    display: none;
+}
+
+
+.kng-base-ul-form ul li label,
+.kng-base-ul-form ul li input
+{
+    padding: 3px;
+}
+
+.kng-base-ul-form ul li.checkbox
+{
+    padding-left: 190px;
+}
+
+.kng-base-ul-form ul li.multi-checkbox ul,
+.kng-base-ul-form ul li.radio ul
+{
+    display: inline-block;
+    border: 0 none;
+}
+
+.kng-base-ul-form ul li.multi-checkbox ul li:first-child,
+.kng-base-ul-form ul li.radio ul li:first-child,
+.kng-base-ul-form ul li.multi-checkbox ul li,
+.kng-base-ul-form ul li.radio ul li
+{
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+
+.kng-base-ul-form ul li.multi-checkbox ul li label,
+.kng-base-ul-form ul li.radio ul li label
+{
+    vertical-align: top;
+    font-weight: normal;
+}
+
+.kng-base-ul-form ul li.multi-checkbox label,
+.kng-base-ul-form ul li.radio label,
+.kng-base-ul-form ul li.textarea label,
+.kng-large-input-ul-form ul li.multi-checkbox label,
+.kng-large-input-ul-form ul li.radio label,
+.kng-large-input-ul-form ul li.textarea label
+{
+    vertical-align: top;
+}
+
+.kng-base-ul-form ul li.multi-checkbox input,
+.kng-base-ul-form ul li.radio input
+{
+    padding-left: 0;
+    margin-left: -3px;
+}
+
+.kng-base-ul-form ul li.kng-full-width-checkbox
+{
+    padding: 0 20px 0 20px;
+}
+
+.kng-base-ul-form ul li.kng-full-width-checkbox input
+{
+    vertical-align: middle;
+}
+
+.kng-base-ul-form ul li.kng-full-width-checkbox label
+{
+    width: 93%;
+}
+
+.kng-large-input-ul-form ul li label,
+.kng-large-input-ul-form ul li input
+{
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+.kng-large-input-ul-form ul li input
+{
+    width: 300px;
+}
+
+.kng-ui-tabs-padding-top-bottom
+{
+    margin: 0 !important;
+    padding: 1.25em 0 1.25em 0 !important;
+}
+
+.kng-pageamount-with-pagination
+{
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+.kng-pageamount-with-pagination .kng-page-amount
+{
+    width: 49%;
+    float: left;
+}
+
+.kng-pageamount-with-pagination .kng-pagination
+{
+    width: 49%;
+    float: left;
+    text-align: right;
+}
+
+.kng-pagination ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.kng-pagination ul li
+{
+    display: inline;
+}
+
+.kng-pagination ul li a,
+.kng-pagination ul li span
+{
+    font-size: 0.85em;
+    padding: 0.3em;
+    border: 1px solid #EEE;
+    margin: 0.2em;
+}
+
+.kng-pagination ul li a:hover
+{
+    font-size: 0.85em;
+    border: 1px solid #CCC;
+    background-color: #EEE;
+}
+
+.kng-pagination ul li span
+{
+    font-weight: bold;
+}
+
+#kng-featured-ad-results ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#kng-featured-ad-results ul li
+{
+    border: 1px solid #CCC;
+    background-color: #F9F9F9;
+    width: 175px;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+
+#kng-featured-ad-results ul li h4
+{
+    text-align: center;
+}
+
+#kng-featured-ad-results ul li ul li
+{
+    float: none;
+    border: 0 none;
+    width: 100%;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    min-height: 0 !important;
+}
+
+#kng-featured-ad-results ul li p.ad-description,
+.kng-ad-results ul li ul li.kng-ad-results-description p.ad-description
+{
+    display: none;
+}
+
+.kng-ad-results
+{
+    clear: both;
+    padding: 1em 0 1em 0;
+}
+
+.kng-ad-results ul
+{
+    display: table;
+    padding: 0;
+    margin: 0;
+    width: 100%
+}
+
+.kng-ad-results ul li
+{
+    display: table-row;
+}
+
+.kng-ad-results ul li ul
+{
+    display: table;
+    width: 100%;
+    border-bottom: 1px dashed #CCC;
+    padding: 0.5em 0 0.5em 0;
+}
+
+.kng-ad-results ul li.kng-ad-results-header ul
+{
+    display: table;
+    background-color: #EEE;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.kng-ad-results ul li ul li
+{
+    display: table-cell;
+    padding: 0.2em;
+}
+
+.kng-ad-results ul li ul li.kng-ad-results-clip,
+.kng-ad-results ul li.kng-ad-results-header ul li.kng-ad-results-clip
+{
+    width: 25px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.kng-ad-results ul li ul li.kng-ad-results-clip img,
+.kng-ad-results ul li.kng-ad-results-header ul li.kng-ad-results-clip img
+{
+    padding: 0.25em;
+}
+
+.kng-ad-results ul li ul li.kng-ad-results-picture,
+.kng-ad-results ul li.kng-ad-results-header ul li.kng-ad-results-picture
+{
+    text-align: center;
+    vertical-align: middle;
+    width: 105px;
+}
+
+.kng-ad-results ul li ul li.kng-ad-results-description,
+.kng-ad-results ul li.kng-ad-results-header ul li.kng-ad-results-description
+{
+    width: 360px;
+}
+
+.kng-ad-results ul li ul li.kng-ad-results-description h4
+{
+    margin: 0 0 0.25em 0;
+    padding: 0;
+}
+}
+
+.kng-ad-results ul li ul li.kng-ad-results-description p
+{
+    margin: 0;
+    padding: 0;
+}
+
+.kng-ad-results ul li ul li.kng-ad-results-user,
+.kng-ad-results ul li.kng-ad-results-header ul li.kng-ad-results-user
+{
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+}
+
+.kng-photo-viewer
+{
+    width: 310px;
+}
+
+.kng-photo-viewer .kng-primary-photo-viewer
+{
+    width: 305px;
+    height: 305px;
+    border: 1px solid #333;
+    background-color: #f0eded;
+    padding: 2px;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.kng-photo-viewer .kng-thumbnail-photos ul
+{
+    list-style: none;
+    margin: 1em 0 1em 0;
+    padding: 0;
+}
+
+.kng-photo-viewer .kng-thumbnail-photos ul li
+{
+    display: inline;
+}
+
+ul.kng-two-column
+{
+    display: table;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+ul.kng-two-column li
+{
+    display: table-row;
+}
+
+ul.kng-two-column li span
+{
+    display: table-cell;
+    padding: 0.3em;
+}
+
+ul.kng-two-column li.kng-border-top span
+{
+    border-top: 1px dashed #e0dfdf;
+}
+
+ul.kng-two-column li.kng-border-bottom span
+{
+    border-bottom: 1px dashed #e0dfdf;
+}
+
+div.kng-two-column-ul-list ul.kng-two-column-ul-left
+{
+    width: 48%;
+    float: left;
+    padding-right: 1em !important;
+}
+
+div.kng-two-column-ul-list ul.kng-two-column-ul-right
+{
+    width: 50%;
+    float: left;
+}
+
+div.kng-header-row
+{
+    background-color: #F6F6F6;
+    padding: 0.3em;
+    width: 100%;
+}
+
+/* --------------------------------------------------------------
+    generic widths that are used on divs and uls to provide column based layouts
+   -------------------------------------------------------------- */
+.kng-width-5
+{
+    width: 5%;
+}
+
+
+.kng-width-10
+{
+    width: 10%;
+}
+
+.kng-width-15
+{
+    width: 15%;
+}
+
+.kng-width-20
+{
+    width: 20%;
+}
+
+.kng-width-25
+{
+    width: 25%;
+}
+
+.kng-width-30
+{
+    width: 30%;
+}
+
+.kng-width-33
+{
+    width: 33%;
+}
+
+.kng-width-35
+{
+    width: 35%;
+}
+
+.kng-width-40
+{
+    width: 40%;
+}
+
+.kng-width-45
+{
+    width: 45%;
+}
+
+.kng-width-50
+{
+    width: 50%;
+}
+
+.kng-width-55
+{
+    width: 55%;
+}
+
+.kng-width-60
+{
+    width: 60%;
+}
+
+.kng-width-66
+{
+    width: 66%;
+}
+
+.kng-width-70
+{
+    width: 70%;
+}
+
+/* used on listAdCategories because of padding */
+.kng-width-74
+{
+    width: 74%;
+}
+
+.kng-width-75
+{
+    width: 75%;
+}
+
+.kng-width-80
+{
+    width: 80%;
+}
+
+.kng-width-85
+{
+    width: 85%;
+}
+
+.kng-width-90
+{
+    width: 90%;
+}
+
+.kng-width-95
+{
+    width: 95%;
+}
+
+/* --------------------------------------------------------------
+    setup of icons in a sprite formatted gif
+    primarily used on the list ads page of my account
+    http://www.kaango.com/account
+   -------------------------------------------------------------- */
+.kng-icon
+{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url(/2.8.49_9.1.1600_1349/resources/img/icon_sprite.gif) no-repeat;
+}
+
+.kng-icon-cut
+{
+    background-position: -6px -12px;
+}
+
+.kng-icon-renew
+{
+    background-position: -6px -46px;
+}
+
+.kng-icon-reject
+{
+    background-position: -6px -81px;
+}
+
+.kng-icon-delete-no-bg
+{
+    background-position: -6px -116px;
+}
+
+.kng-icon-print
+{
+    background-position: -6px -150px;
+}
+
+.kng-icon-phone
+{
+    background-position: -6px -182px;
+}
+
+.kng-icon-edit
+{
+    background-position: -6px -218px;
+}
+
+.kng-icon-clone
+{
+    background-position: -6px -253px;
+}
+
+.kng-icon-invoice
+{
+    background-position: -6px -289px;
+}
+
+.kng-icon-ad-details-no-bg
+{
+    background-position: -6px -322px;
+}
+
+.kng-icon-ad-details-w-bg
+{
+    background-position: -6px -357px;
+}
+
+.kng-icon-delete-w-bg
+{
+    background-position: -6px -392px;
+}
+
+.kng-icon-rate
+{
+    background-position: -6px -426px;
+}
+
+.kng-icon-feedback
+{
+    background-position: -6px -461px;
+}
+
+.kng-icon-feedback-edit
+{
+    background-position: -6px -495px;
+}
+
+.kng-icon-cancel
+{
+    background-position: -6px -530px;
+}
+
+.kng-grid-setup
+{
+    
+}
+
+.kng-grid-setup tr td
+{
+    padding-bottom: 0.75em;
+    margin-bottom: 0.75em;
+    border-bottom: 1px dashed #CCC;
+}
+
+/* --------------------------------------------------------------
+    special cass for the form fields on login - hide the new password fields shown only if needed
+   -------------------------------------------------------------- */
+li#field-confirmPassword, li#field-newPassword
+{
+    display: none;
+}
+
+/* --------------------------------------------------------------
+    the setup for the ads in the carousel on the list ad categories page
+    http://www.kaango.com/ads/listAdCategories
+   -------------------------------------------------------------- */
+.kng-carousel-tooltip
+{
+    color: #000000;
+    font-family: helvetica,arial,sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+.kng-carousel-tooltip-desc
+{
+    color: #5E5E5E;
+    font-family: helvetica,arial,sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+.kng-carousel-ad-image
+{
+    display: table-cell;
+    height: 95px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    width: 95px;
+}
+
+.kng-carousel-ad-image a img
+{
+    border: medium none;
+    line-height: 95px;
+    margin: 0 auto;
+}
+
+.kng-carousel-ad-info
+{
+    margin: 0 auto;
+    text-align: center;
+    width: 95px;
+}
+
+.kng-carousel-ad-info a
+{
+    font-size: 1em;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.kng-clip-list-default-setup
+{
+    display: none;
+    cursor: pointer;
+    border: none;
+    vertical-align: top;
+}
+
+.kng-map-listings-setup
+{
+    border: 2px solid #ccc;
+    background-color: #ccc;
+    width: 585px;
+}
+
+.kng-map-listings-instructions
+{
+    color: #1d1d1d;
+    font-size: 0.9em;
+}
+/* --------------------------------------------------------------
+   DEFAULT STYLE SETUP FOR THE LINK COLORS - Properties will probably overwrite these settings
+   -------------------------------------------------------------- */
+a.kng-primary-link-color
+{
+    color: #4169e1;
+}
+
+a.kng-primary-link-color:hover
+{
+    color: #708090;
+}
+
+a.kng-secondary-link-color
+{
+    color: #800000;
+}
+
+a.kng-secondary-link-color:hover
+{
+    color: #a52a2a;
+}
+
+a.kng-tertiary-link-color
+{
+    color: #2e323c;
+}
+
+a.kng-tertiary-link-color:hover
+{
+    color: #2e323c;
+}
+
+/** ajax */
+.kng-ajax-spinner {
+    margin: auto;
+    display: block;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #666;
+    text-align: center;
+    padding: 10px;
+}
+
+.kng-ajax-spinner p {
+    font-weight: bold;
+    font-size: 14px;
+    color: #666;
+}
+
+.kng-ajax-spinner .kng-ajax-spinner-icon {
+    display: block;
+    margin: 5px auto;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-image: url('../img/ajax/ajax-loader.gif');
+    text-indent: -99999px;
+    width: 16px;
+    height: 16px;
+}
+
+.kng-ajax-spinner-loading {
+    width: 60px;
+    background-color: #ececec;
+}
+
+.kng-ajax-spinner-error {
+    background-color: #CF4D4D;
+}
+
+.kng-ajax-spinner-error p {
+    color: #fff;
+}
+
+.kng-ajax-spinner-error .kng-ajax-spinner-icon {
+    display: none;
+}
+
+/*
+ * Supports the mapping on the view ad page
+ */
+#kaango-viewad-map
+{
+    border: 2px solid #CCC;
+    height: 500px;
+}
+
+#kaango-viewad-map-dir-wrapper
+{
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

@@ -1,0 +1,33 @@
+<html>                                                                  
+ <head>                                                                  
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>        
+ <script type="text/javascript" src="kitel.js"></script>                                                               
+ </head>        
+                                                          
+ <body>     
+ 	<form id="kttl_tmp_phone_form"  novalidate="novalidate" style="display: block; ">                                                     
+		<li id="kttl_use_tmp_phone_cntr">
+		<input id="kttl_use_tmp_phone" type="checkbox" value="true"/>
+		</li>
+		
+		<li id="kttl_tmp_phone_area_codes_cntr">
+		Choose Area Code:
+		<select id="kttl_tmp_phone_area_codes"></select>
+		</li>
+		
+		<li id="kttl_tmp_phone_numbers_cntr">
+		Choose Your New Number:
+		<select id="kttl_tmp_phone_numbers"></select>
+		</li>
+		
+		<li id="kttl_tmp_phone_usr_cntr">
+		Your Phone Number:
+		<input id="kttl_tmp_phone_usr_area_code"    type="number" size="3" maxlength="3" />
+		<input id="kttl_tmp_phone_usr_phone_number" type="number" size="7" maxlength="7" />
+		</li>
+    </form>        
+
+
+	<a onclick="kttl_submit_data()";>submit</a>    
+ </body>                                                                 
+ </html>

@@ -1,0 +1,90 @@
+/*
+ * kaango specific css to overwrite the defaults and customize the jquery ui css
+ *
+ * !!!! ONLY PLACE IN HERE SPECIFIC STYLES TO OVERWRITE DEFAULT !!!!!
+ *
+ * File Based on Markup in jQuery UI - 1.8.1
+ *
+ */
+
+/*
+ * Begin Dialog Markup
+ * - Based on the markup example provided in http://jqueryui.com/demos/dialog/
+ */
+.ui-dialog
+{
+    -moz-box-shadow: 0 0 3px 1px rgba(0,0,0,0.30);
+    -webkit-box-shadow: 0 0 3px 1px rgba(0,0,0,0.30);
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.30);
+    overflow: visible;
+}
+
+.ui-dialog-titlebar
+{
+    border: 0 none;
+    background: #FFF;
+}
+
+.ui-dialog-titlebar .ui-dialog-title
+{
+    font-size: 14px;
+}
+
+.ui-dialog-buttonset .ui-button, .ui-button
+{
+    -moz-box-shadow: 0 0 3px 1px rgba(0,0,0,0.20);
+    -webkit-box-shadow: 0 0 3px 1px rgba(0,0,0,0.20);
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.20);
+    color: #fff;
+    font-weight: bold;
+}
+
+.ui-dialog-buttonset .ui-button, .ui-button
+{
+    background: none repeat scroll 0 0 #4f657c;
+}
+
+/*
+ * End Dialog Markup
+ */
+
+.ui-tabs
+{
+    border: 0 none;
+    margin: 0;
+}
+
+.ui-tabs .ui-tabs-panel
+{
+    border: 1px solid #a6a5a5;
+}
+
+.ui-tabs .ui-tabs-nav
+{
+    border: 0 none;
+    background: #FFF;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected
+{
+    /* Firefox */
+    background: -moz-linear-gradient( top, rgba(238,238,238,1), rgba(255,255,255,1) );
+    /* Chrome & Safari */
+    background: -webkit-gradient( linear, left top, left bottom, color-stop( 0, rgba(238,238,238,1) ), color-stop( 1, rgba(255,255,255,1) ) );
+    /* IE5.5 - IE7 */
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FFEEEEEE,EndColorStr=#FFFFFFFF);
+    /* IE8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FFEEEEEE,EndColorStr=#FFFFFFFF)";
+    border: 1px solid #a6a5a5;
+}
+
+.ui-tabs .ui-tabs-nav
+{
+    padding-left: 0.75em;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a
+{
+    /* color: #FFF; */
+    font-weight: bold;
+}
