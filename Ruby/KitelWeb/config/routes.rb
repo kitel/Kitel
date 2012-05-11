@@ -17,6 +17,7 @@ KitelWeb::Application.routes.draw do
   get "service/redirect"
   #get "service/update"
   match 'service/destroy/:id' => 'service#destroy'
+  match 'service/:id' => 'service#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

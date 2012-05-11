@@ -6,6 +6,19 @@ class ServiceController < ApplicationController
   end
 
   def show
+    if params[:id]==''
+      return renderError(400, "Wrong id")
+    end
+
+    begin
+      @service = Service.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      return renderError(400, "Service not found")
+    end
+
+    @status = 200
+
+    render :status => @status
   end
 
   def create
@@ -45,7 +58,7 @@ class ServiceController < ApplicationController
 
   #twilio integration demo
   def redirect
-    if !params['From'] ||  params['From']==''
+    if !params['From' ] ||  params['From']==''
       params['From'] = '+14084209186'
     end
 
